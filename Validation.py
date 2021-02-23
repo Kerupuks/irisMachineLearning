@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 
-irisDataset = c.read_csv('iris.csv', header=0)
+irisDataset = c.read_csv('assets\iris.csv', header=0)
 y = irisDataset.iloc[:, 4].values
 x = irisDataset.iloc[:, :-1].values
 
@@ -24,19 +24,3 @@ classifier.fit(x_train, y_train)
 y_pred = classifier.predict(x_test)
 
 print(classification_report(y_test, y_pred))
-
-#Menentukan Nilai K
-error = []
-
-for i in range(1, 40):
-    knn = KNeighborsClassifier(n_neighbors=i)
-    knn.fit(x_train, y_train)
-    pred_i = knn.predict(x_test)
-    error.append(d.mean(pred_i != y_test))
-    
-b.figure(figsize=(12, 6))
-b.plot(range(1, 40), error, color = 'red', marker = 'o', markerfacecolor='red', markersize='8')
-b.title('Error Rate Nilai K')
-b.xlabel('Nilai K')
-b.ylabel('Error rata-rata')
-b.show()

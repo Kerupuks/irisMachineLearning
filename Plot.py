@@ -3,7 +3,7 @@ import matplotlib.pyplot as b
 import pandas as c
 from pandas.core.indexes.api import Index
 
-irisDataset = c.read_csv('iris.csv')
+irisDataset = c.read_csv('assets\iris.csv')
 a.scatterplot(x='sepals-length', y='sepals-width', hue='label', data=irisDataset).set_title('Sebaran Data Iris')
 b.figure(1)
 b.show()

@@ -3,7 +3,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 n_neighbors = 6
 
-irisDataset = c.read_csv('iris.csv', header = 0)
+irisDataset = c.read_csv('assets\iris.csv', header = 0)
 x = irisDataset.iloc[:, :2]
 y = irisDataset.iloc[:, -1]
 
